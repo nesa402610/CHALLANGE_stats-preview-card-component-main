@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root {
+    --color-darkblue: hsl(233, 47%, 7%);
+    --color-blue: hsl(244, 38%, 16%);
+    --color-violet: hsl(277, 64%, 61%);
+    --color-mainParag: hsla(0, 0%, 100%, 0.75);
+    --color-statHead: hsla(0, 0%, 100%, 0.6);
+    --font-inter: 'Inter', sans-serif;
+    --font-deca: 'Lexend Deca', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    font-size: 15px;
+    background-color: var(--color-darkblue);
+    color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html, body, #root {
+    height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+* {
+    box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+#root {
+    display: flex;
+    align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+    width: 1440px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    padding: 0 8rem;
+
+}
+
+.infoBlock {
+    border-radius: 1rem 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4rem;
+    background-color: var(--color-blue);
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin: 0;
+}
+h1 span {
+    color: var(--color-violet);
+}
+
+p {
+    color: var(--color-mainParag);
+    line-height: 2;
+}
+
+.statsBlock {
+    display: flex;
+    gap: 5rem;
+}
+
+.statsItem__head {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.statsItem__body {
+    text-transform: uppercase;
+    color: var(--color-statHead);
+}
+.imageBlock {
+    display: flex;
+    background-size: contain;
+    background-color: var(--color-violet);
+    background-blend-mode: multiply;
+}
+.imageBlock, img {
+    border-radius: 0 1rem 1rem 0;
+
+}
+img {
+    opacity: 0;
+}
+
+@media (max-width: 450px) {
+    .container {
+        width: 414px;
+    }
+    .content {
+        padding: 1rem;
+        flex-direction: column-reverse;
+    }
+    .infoBlock {
+        border-radius: 0 0 1rem 1rem;
+        padding: 2rem;
+        text-align: center;
+    }
+    img {
+        width: 100%;
+    }
+    .imageBlock, img {
+        border-radius: 1rem 1rem 0 0;
+
+    }
+    .statsBlock {
+        flex-direction: column;
+        gap: 2rem;
+    }
 }
