@@ -1,6 +1,6 @@
 import './App.css';
 import imageD from './images/image-header-desktop.jpg';
-import imageM from './images/image-header-mobile.jpg';
+
 
 function App() {
     const stats = [
